@@ -1,0 +1,125 @@
+############################
+## 		Enery Weapons   ####
+############################
+
+
+----------------------------
+----- Phasers			----
+----------------------------
+
+Phaser Array Mk I
+Phaser Array Mk II
+Phaser Array Mk III
+Phaser Array Mk IV
+Phaser Array Mk V
+
+Phaser Pulse Canon Mk I
+Phaser Pulse Canon Mk II
+Phaser Pulse Canon Mk III
+
+Phaser Turret (autocannon) Mk I
+Phaser Turret (autocannon) Mk II
+Phaser Turret (autocannon) Mk III
+Phaser Turret (autocannon) Mk IV
+Phaser Turret (autocannon) Mk V
+
+#X/ Titan weapons
+Phaser Lance Mk I
+Phaser Lance MK II
+
+----------------------------
+----- Phased Polaron	----
+----------------------------
+
+Phased Polaron Beam Array Mk I
+Phased Polaron Beam Array Mk II
+Phased Polaron Beam Array Mk III
+Phased Polaron Beam Array Mk IV
+Phased Polaron Beam Array Mk V
+
+----------------------------
+----- plasma			----
+----------------------------
+
+Plasma Beam Array Mk I
+Plasma Beam Array Mk II
+Plasma Beam Array Mk III
+Plasma Beam Array Mk IV
+Plasma Beam Array Mk V
+
+Plasma Cannon Mk I
+Plasma Cannon Mk II
+Plasma Cannon Mk III
+
+Plasma Turret (autocannon) Mk I
+Plasma Turret (autocannon) Mk II
+Plasma Turret (autocannon) Mk III
+Plasma Turret (autocannon) Mk IV
+Plasma Turret (autocannon) Mk V
+
+----------------------------
+----- Disruptor			----
+----------------------------
+Disruptor Beam Array Mk I
+Disruptor Beam Array Mk II
+Disruptor Beam Array Mk III
+Disruptor Beam Array Mk IV
+Disruptor Beam Array Mk V
+
+Disruptor Cannon Mk I
+Disruptor Cannon Mk II
+Disruptor Cannon Mk III
+
+Disruptor Turret (autocannon) Mk I
+Disruptor Turret (autocannon) Mk II
+Disruptor Turret (autocannon) Mk III
+Disruptor Turret (autocannon) Mk IV
+Disruptor Turret (autocannon) Mk V
+
+
+---------------------------
+---- other ----------------
+---------------------------
+
+Isokinetic Canon Mk I
+Isokinetic Canon Mk II
+Isokinetic Canon Mk III
+
+
+
+#######################
+## 		Torpedos   ####
+#######################
+
+Photon Torpedo Mk I
+Photon Torpedo Mk II
+Photon Torpedo Mk III
+
+Photon Torpedo Mk I (Burstfire)
+Photon Torpedo Mk II (Burstfire)
+Photon Torpedo Mk III (Burstfire)
+
+Quantum Torpedo Mk I
+Quantum Torpedo Mk II
+Quantum Torpedo Mk III
+
+Plasma Torpedo Mk I
+Plasma Torpedo Mk II
+Plasma Torpedo Mk III
+
+
+
+Transphasic Torpedo (only 1 Mk.)
+Borg Nanite-infused Torpedo 
+Breen Enery Dampening Torpedo
+Chroniton Torpedo
+
+
+#############################
+Subspace Weapons?
+
+
+
+
+
+
