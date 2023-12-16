@@ -1,0 +1,65 @@
+
+tech_plasma_1 = {
+
+    cost = @tier1cost2
+    area = physics
+    category = { field_manipulation }
+    tier = 1
+    start_tech = no
+    weight = @tier1weight2
+}
+
+tech_plasma_2 = {
+
+    cost = @tier3cost2
+    area = physics
+    category = { field_manipulation }
+    tier = 3
+    start_tech = no
+    prerequisites = { tech_plasma_1 }
+    weight = @tier3weight2
+}
+
+tech_plasma_3 = {
+
+    cost = @tier4cost2
+    area = physics
+    category = { field_manipulation }
+    tier = 4
+    start_tech = no
+    prerequisites = { tech_plasma_2 }
+    weight = @tier4weight2
+}
+
+
+tech_plasma_beam_1 = {
+
+    cost = @tier2cost3
+    area = physics
+    category = { field_manipulation }
+    tier = 2
+    start_tech = no
+    weight = @tier2weight3
+}
+
+tech_plasma_beam_2 = {
+
+    cost = @tier3cost3
+    area = physics
+    category = { field_manipulation }
+    tier = 3
+    start_tech = no
+    prerequisites = { tech_plasma_beam_1 }
+    weight = @tier3weight3
+}
+
+tech_plasma_beam_3 = {
+
+    cost = @tier4cost3
+    area = physics
+    category = { field_manipulation }
+    tier = 4
+    start_tech = no
+    prerequisites = { tech_plasma_beam_2 }
+    weight = @tier4weight3
+}

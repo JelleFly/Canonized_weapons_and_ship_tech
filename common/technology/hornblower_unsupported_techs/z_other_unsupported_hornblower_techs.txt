@@ -1,0 +1,1686 @@
+
+############################
+#  STARBASE UPGRADE TECHS  #
+# REQUIRES SPECIFIC WEIGTS #
+############################
+
+tech_starbase_starport = {
+
+	area = engineering
+	category = { voidcraft }
+	tier = 0
+	start_tech = yes
+
+	triggered_config = {		
+		trigger = { is_ufop = yes }	
+		title = tech_starbase_starport	
+		desc = tech_starbase_starport_desc	
+		icon = tech_starbase_starport_ufop # HRB_TODO: placeholder	
+	}		
+	triggered_config = {		
+		trigger = { is_klingon = yes }	
+		title = tech_starbase_starport	
+		desc = tech_starbase_starport_desc	
+		icon = tech_starbase_starport_klingon # HRB_TODO: placeholder		
+	}		
+	triggered_config = {		
+		trigger = { is_romulan = yes }	
+		title = tech_starbase_starport	
+		desc = tech_starbase_starport_desc	
+		icon = tech_starbase_starport_romulan # HRB_TODO: placeholder	
+	}		
+	triggered_config = {		
+		trigger = { is_cardassian = yes }	
+		title = tech_starbase_starport	
+		desc = tech_starbase_starport_desc	
+		icon = tech_starbase_starport_cardassian # HRB_TODO: placeholder		
+	}	
+}
+
+tech_starbase_starhold = {
+
+	cost = @tier2cost3
+	area = engineering
+	category = { voidcraft }
+	tier = 2
+	start_tech = no
+	prerequisites = { tech_starbase_starport }
+	weight = @tier2weight3
+
+	triggered_config = {		
+		trigger = { is_ufop = yes }	
+		title = tech_starbase_starhold	
+		desc = tech_starbase_starhold_desc	
+		icon = tech_starbase_starhold_ufop # HRB_TODO: placeholder	
+	}		
+	triggered_config = {		
+		trigger = { is_klingon = yes }	
+		title = tech_starbase_starhold	
+		desc = tech_starbase_starhold_desc	
+		icon = tech_starbase_starhold_klingon # HRB_TODO: placeholder		
+	}		
+	triggered_config = {		
+		trigger = { is_romulan = yes }	
+		title = tech_starbase_starhold	
+		desc = tech_starbase_starhold_desc	
+		icon = tech_starbase_starhold_romulan # HRB_TODO: placeholder	
+	}		
+	triggered_config = {		
+		trigger = { is_cardassian = yes }	
+		title = tech_starbase_starhold	
+		desc = tech_starbase_starhold_desc	
+		icon = tech_starbase_starhold_cardassian # HRB_TODO: placeholder		
+	}	
+
+	weight_modifier = {
+		modifier = {
+			factor = 0.1
+			NOT = { years_passed > 20 }
+		}
+		modifier = {
+			factor = 10
+			any_neighbor_country = {
+				has_technology = tech_starbase_starhold
+			}
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
+		modifier = {
+			factor = 3
+			years_passed > 35
+		}
+		modifier = {
+			factor = 4
+			years_passed > 40
+		}
+		modifier = {
+			factor = 5
+			count_starbase_sizes = {
+				starbase_size = starbase_starport
+				count >= 3
+			}
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_conquest_adopt
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_defense_adopt
+		}
+	}
+}
+
+tech_starbase_fortress = {
+
+	cost = @tier4cost3
+	area = engineering
+	category = { voidcraft }
+	tier = 4
+	start_tech = no
+	prerequisites = { tech_starbase_starhold }
+	weight = @tier4weight3
+
+	triggered_config = {		
+		trigger = { is_ufop = yes }	
+		title = tech_starbase_fortress	
+		desc = tech_starbase_fortress_desc	
+		icon = tech_starbase_fortress_ufop # HRB_TODO: placeholder	
+	}		
+	triggered_config = {		
+		trigger = { is_klingon = yes }	
+		title = tech_starbase_fortress	
+		desc = tech_starbase_fortress_desc	
+		icon = tech_starbase_fortress_klingon # HRB_TODO: placeholder		
+	}		
+	triggered_config = {		
+		trigger = { is_romulan = yes }	
+		title = tech_starbase_fortress	
+		desc = tech_starbase_fortress_desc		
+		icon = tech_starbase_fortress_romulan # HRB_TODO: placeholder	
+	}		
+	triggered_config = {		
+		trigger = { is_cardassian = yes }	
+		title = tech_starbase_fortress	
+		desc = tech_starbase_fortress_desc		
+		icon = tech_starbase_fortress_cardassian # HRB_TODO: placeholder		
+	}	
+
+	weight_modifier = {
+		modifier = {
+			factor = 0.1
+			NOT = { years_passed > 70 }
+		}
+		modifier = {
+			factor = 10
+			any_neighbor_country = {
+				has_technology = tech_starbase_fortress
+			}
+		}
+		modifier = {
+			factor = 2
+			years_passed > 90
+		}
+		modifier = {
+			factor = 3
+			years_passed > 95
+		}
+		modifier = {
+			factor = 4
+			years_passed > 100
+		}
+		modifier = {
+			factor = 5
+			count_starbase_sizes = {
+				starbase_size = starbase_starhold
+				count >= 3
+			}
+		}
+	}
+}
+
+##############################
+#  STATION PRODUCTION TECHS  #
+#  REQUIRES SPECIFIC WEIGTS  #
+##############################
+
+tech_mining_station_mineral_output_increase_tier_1 = {
+
+	cost = @tier1cost1
+	area = engineering
+	category = { industry }
+	tier = 1
+	start_tech = no
+	weight = @tier1weight1   
+
+	modifier = {
+		stations_minerals_produces_mult = 0.10 
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_commerce_adopt
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_wellfare_adopt
+		}
+	}
+}
+
+tech_mining_station_mineral_output_increase_tier_2 = {
+
+	cost = @tier2cost3
+	area = engineering
+	category = { industry }
+	tier = 2
+	start_tech = no
+	prerequisites = { tech_mining_station_mineral_output_increase_tier_1 }
+	weight = @tier2weight3  
+
+	modifier = {
+		stations_minerals_produces_mult = 0.10  
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_commerce_adopt
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_wellfare_adopt
+		}
+	}
+}
+
+tech_mining_station_mineral_output_increase_tier_3 = {
+
+	cost = @tier4cost1
+	area = engineering
+	category = { industry }
+	tier = 4
+	start_tech = no
+	prerequisites = { tech_mining_station_mineral_output_increase_tier_2 }
+	weight = @tier4weight1   
+
+	modifier = {
+		stations_minerals_produces_mult = 0.10 
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_commerce_adopt
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_wellfare_adopt
+		}
+	}
+}
+
+tech_mining_station_deuterium_output_increase_tier_1 = {
+
+	cost = @tier1cost1
+	area = engineering
+	category = { industry }
+	tier = 1
+	start_tech = no
+	weight = @tier1weight1   
+
+	modifier = {
+		stations_deuterium_produces_mult = 0.10 
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_commerce_adopt
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_wellfare_adopt
+		}
+	}
+}
+
+tech_mining_station_deuterium_output_increase_tier_2 = {
+
+	cost = @tier2cost3
+	area = engineering
+	category = { industry }
+	tier = 2
+	start_tech = no
+	prerequisites = { tech_mining_station_deuterium_output_increase_tier_1 }
+	weight = @tier2weight3   
+
+	modifier = {
+		stations_deuterium_produces_mult = 0.10 
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_commerce_adopt
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_wellfare_adopt
+		}
+	}
+}
+
+tech_mining_station_deuterium_output_increase_tier_3 = {
+
+	cost = @tier4cost1
+	area = engineering
+	category = { industry }
+	tier = 4
+	start_tech = no
+	prerequisites = { tech_mining_station_deuterium_output_increase_tier_2 }
+	weight = @tier4weight1   
+
+	modifier = {
+		stations_deuterium_produces_mult = 0.10 
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_commerce_adopt
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_wellfare_adopt
+		}
+	}
+}
+
+tech_research_station_output_tier_1 = {
+
+	cost = @tier1cost1
+	area = physics
+	category = { computing }
+	tier = 1
+	start_tech = no
+	weight = @tier1weight1   
+
+	modifier = {
+		stations_research_produces_mult = 0.1 
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_research_adopt
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_development_adopt
+		}
+	}
+}
+
+tech_research_station_output_tier_2 = {
+
+	cost = @tier2cost2
+	area = physics
+	category = { computing }
+	tier = 2
+	start_tech = no
+	prerequisites = { tech_research_station_output_tier_1 }
+	weight = @tier2weight2   
+	
+	modifier = {
+		stations_research_produces_mult = 0.1 
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_research_adopt
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_development_adopt
+		}
+	}
+}
+
+tech_research_station_output_tier_3 = {
+
+	cost = @tier3cost3
+	area = physics
+	category = { computing }
+	tier = 3
+	start_tech = no
+	prerequisites = { tech_research_station_output_tier_2 }
+	weight = @tier3weight3   
+
+	modifier = {
+		stations_research_produces_mult = 0.1 
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_research_adopt
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_development_adopt
+		}
+	}
+}
+
+tech_mining_station_energy_output_increase_tier_1 = {
+
+	cost = @tier1cost1
+	area = physics
+	category = { field_manipulation }
+	tier = 1
+	start_tech = no
+	weight = @tier1weight1  
+
+	modifier = {
+		stations_energy_produces_mult = 0.10
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_commerce_adopt
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_wellfare_adopt
+		}
+	}
+}
+
+tech_mining_station_energy_output_increase_tier_2 = {
+
+	cost = @tier2cost3
+	area = physics
+	category = { field_manipulation }
+	tier = 2
+	start_tech = no
+	prerequisites = { tech_mining_station_energy_output_increase_tier_1 }
+	weight = @tier2weight3   
+
+	modifier = {
+		stations_energy_produces_mult = 0.10
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_commerce_adopt
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_wellfare_adopt
+		}
+	}
+}
+
+tech_mining_station_energy_output_increase_tier_3 = {
+
+	cost = @tier4cost1
+	area = physics
+	category = { field_manipulation }
+	tier = 4
+	start_tech = no
+	prerequisites = { tech_mining_station_energy_output_increase_tier_2 }
+	weight = @tier4weight1  
+
+	modifier = {
+		stations_energy_produces_mult = 0.10
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_commerce_adopt
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_wellfare_adopt
+		}
+	}
+}
+
+###########################
+#	HABITABILITY TECHS   #
+# REQUIRE SPECIFIC WEIGTS #
+###########################
+
+tech_pop_growth_speed_tier_1 = {
+
+	cost = @tier1cost3
+	area = society
+	category = { biology }
+	tier = 1
+	start_tech = no
+	weight = @tier1weight3   
+
+	modifier = {
+		pop_growth_speed = 0.1 
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 2
+			num_owned_planets > 8
+		}
+	}
+}
+
+tech_pop_growth_speed_tier_2 = {
+
+	cost = @tier2cost3
+	area = society
+	category = { biology }
+	tier = 2
+	start_tech = no
+	prerequisites = { tech_pop_growth_speed_tier_1 }
+	weight = @tier2weight3   
+
+	modifier = {
+		pop_growth_speed = 0.1 
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 2
+			num_owned_planets > 10
+		}
+	}
+}
+
+tech_pop_growth_speed_tier_3 = {
+
+	cost = @tier3cost2
+	area = society
+	category = { biology }
+	tier = 3
+	start_tech = no
+	prerequisites = { tech_pop_growth_speed_tier_2 }
+	weight = @tier3weight2   
+
+	modifier = {
+		pop_growth_speed = 0.1 
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 2
+			num_owned_planets > 12
+		}
+	}
+}
+
+###########################
+#	   ENVOY TECHS	   #
+# REQUIRE SPECIFIC WEIGTS #
+###########################
+
+tech_envoy_increase_tier_1 = {
+
+	cost = @tier1cost2
+	area = society
+	category = { statecraft }
+	tier = 1
+	start_tech = no
+	weight = @tier1weight2   
+
+	modifier = {
+		envoys_add = 1 
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 2
+			num_communications > 8
+		}
+	}
+}
+
+tech_envoy_increase_tier_2 = {
+
+	cost = @tier2cost2
+	area = society
+	category = { statecraft }
+	tier = 2
+	start_tech = no
+	prerequisites = { tech_envoy_increase_tier_1 }
+	weight = @tier2weight2   
+
+	modifier = {
+		envoys_add = 1 
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 2
+			num_communications > 10
+		}
+	}
+}
+
+tech_envoy_increase_tier_3 = {
+
+	cost = @tier4cost1
+	area = society
+	category = { statecraft }
+	tier = 4
+	start_tech = no
+	prerequisites = { tech_envoy_increase_tier_2 }
+	weight = @tier4weight1   
+
+	modifier = {
+		envoys_add = 1 
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 2
+			num_communications > 8
+		}
+	}
+}
+
+##########################
+#	  EMBASSY TECHS	 #
+# REQUIRE SPECIFIC DESCS #
+##########################
+
+# HRB_TODO: delete all the prereqfor_desc for buildings, they are auto generated
+# To avoid showing the other's empires buildings, go to the building definition and add
+#   show_tech_unlock_if = {
+#	   [conditions...]
+#	   is_ufop = yes 
+#   }
+
+# HRB_NOTE: if the title will remain the same, or the desc, you can choose to not specify that field,
+# and the triggered_config will take the default one.
+
+tech_xeno_diplomacy = {
+	cost = @tier2cost2
+	area = society
+	category = { new_worlds }
+	tier = 2
+	start_tech = no
+	weight = @tier2weight2
+
+	# triggered_config = {
+	#	 trigger = { is_ufop = yes }
+	#	 title = tech_xeno_diplomacy
+	#	 desc = tech_xeno_diplomacy_desc
+	#	 icon = tech_mine_gravitons_1 # HRB_TODO: placeholder
+	# }
+	# triggered_config = {
+	#	 trigger = { is_klingon = yes }
+	#	 title = tech_xeno_diplomacy
+	#	 desc = tech_xeno_diplomacy_desc
+	#	 icon = tech_mine_gravitons_1 # HRB_TODO: placeholder
+	# }
+	# triggered_config = {
+	#	 trigger = { is_romulan = yes }
+	#	 title = tech_xeno_diplomacy
+	#	 desc = tech_xeno_diplomacy_desc
+	#	 icon = tech_mine_gravitons_1 # HRB_TODO: placeholder
+	# }
+	# triggered_config = {
+	#	 trigger = {	is_cardassian = yes	}
+	#	 title = tech_xeno_diplomacy
+	#	 desc = tech_xeno_diplomacy_desc
+	#	 icon = tech_mine_gravitons_1 # HRB_TODO: placeholder		
+	# }
+}
+
+tech_xeno_relations = {
+
+	cost = @tier3cost2
+	area = society
+	category = { new_worlds }
+	tier = 3
+	start_tech = no
+	prerequisites = { tech_xeno_diplomacy }
+	weight = @tier3weight2
+	# triggered_config = {			
+	#	 trigger = {		
+	#		 is_ufop = yes	
+	#	 }		
+	#	 title = tech_xeno_relations
+	#	 desc = tech_xeno_relations_desc		
+	#	 icon = tech_mine_gravitons_1 # HRB_TODO: placeholder		
+	#	 prereqfor_desc = {		
+	#		 hide_prereq_for_desc = component	
+	#		 building = {	
+	#			 title = TECH_EMBASSY_UFOP_2_TITLE
+	#		 }	
+	#	 }		
+	# }			
+	# triggered_config = {			
+	#	 trigger = {		
+	#		 is_klingon = yes	
+	#	 }		
+	#	 title = tech_xeno_relations
+	#	 desc = tech_xeno_relations_desc		
+	#	 icon = tech_mine_gravitons_1 # HRB_TODO: placeholder		
+	#	 prereqfor_desc = {		
+	#		 hide_prereq_for_desc = component	
+	#		 building = {	
+	#			 title = TECH_EMBASSY_KLINGON_2_TITLE
+	#		 }	
+	#	 }		
+	# }			
+	# triggered_config = {			
+	#	 trigger = {		
+	#		 is_romulan = yes	
+	#	 }		
+	#	 title = tech_xeno_relations
+	#	 desc = tech_xeno_relations_desc		
+	#	 icon = tech_mine_gravitons_1 # HRB_TODO: placeholder		
+	#	 prereqfor_desc = {		
+	#		 hide_prereq_for_desc = component	
+	#		 building = {	
+	#			 title = TECH_EMBASSY_ROMULAN_2_TITLE
+	#		 }	
+	#	 }		
+	# }			
+	# triggered_config = {			
+	#	 trigger = {		
+	#		 is_cardassian = yes	
+	#	 }		
+	#	 title = tech_xeno_relations
+	#	 desc = tech_xeno_relations_desc		
+	#	 icon = tech_mine_gravitons_1 # HRB_TODO: placeholder		
+	#	 prereqfor_desc = {		
+	#		 hide_prereq_for_desc = component	
+	#		 building = {	
+	#			 title = TECH_EMBASSY_CARDASSIAN_2_TITLE
+	#		 }	
+	#	 }		
+	# }	
+}
+
+########################
+#  NEW EXCLUSIVE TECHS #
+# REQUIRE A MAPO CHECK #
+########################
+
+tech_tractor_beam_ufop = {
+
+	cost = @tier2cost1
+	area = physics
+	category = { field_manipulation }
+	tier = 2
+	start_tech = no
+	weight = @tier2weight1   
+
+	potential = {
+		is_ufop = yes
+	}
+
+	modifier = {
+		stations_minerals_produces_mult = 0.1
+		stations_research_produces_mult = 0.1 
+	}
+}
+
+tech_streamlined_transporters_ufop = {
+
+	cost = @tier3cost2
+	area = physics
+	category = { particles }
+	tier = 3
+	start_tech = no
+	weight = @tier3weight2   
+
+	potential = {
+		is_ufop = yes
+	}
+
+	modifier = {
+		pop_growth_speed = 0.05
+		planet_jobs_upkeep_mult = -0.1 
+	}
+}
+
+tech_tricorders_ufop = {
+
+	cost = @tier3cost3
+	area = society
+	category = { biology }
+	tier = 3
+	start_tech = no
+	weight = @tier3weight3   
+
+	potential = {
+		is_ufop = yes
+	}
+
+	modifier = {
+		ship_anomaly_generation_chance_mult = 0.1
+		planet_colony_development_speed_mult = 0.5 
+	}
+}
+
+tech_batleth_klingon = {
+
+	cost = @tier2cost1
+	area = engineering
+	category = { industry }
+	tier = 2
+	start_tech = no
+	weight = @tier2weight1   
+
+	potential = {
+		is_klingon = yes
+	}
+
+	modifier = {
+		description = tech_batleth_klingon_effect
+		stations_alloys_produces_mult = 0.5
+	}
+}
+
+tech_armors_klingons = {
+
+	cost = @tier3cost2
+	area = society
+	category = { military_theory }
+	tier = 3
+	start_tech = no
+	weight = @tier3weight2   
+
+	potential = {
+		is_klingon = yes
+	}
+
+	modifier = {
+		envoys_add = 1
+		planet_jobs_worker_produces_mult = 0.05 
+	}
+}
+
+tech_historic_clone_klingon = {
+
+	cost = @tier3cost3
+	area = society
+	category = { biology }
+	tier = 3
+	start_tech = no
+	weight = @tier3weight3
+
+	potential = {
+		is_klingon = yes
+	}
+
+	modifier = {
+		description = tech_historic_clone_klingon_effect
+	}
+}
+
+tech_emitters_romulan = {
+
+	cost = @tier2cost1
+	area = physics
+	category = { particles }
+	tier = 2
+	start_tech = no
+	weight = @tier2weight1   
+
+	potential = {
+		is_romulan = yes
+	}
+
+	modifier = {
+		ship_evasion_add = 5
+		ship_tracking_add = 5 
+	}
+}
+
+tech_surgery_romulan = {
+
+	cost = @tier3cost3
+	area = society
+	category = { biology }
+	tier = 3
+	start_tech = no
+	weight = @tier3weight3   
+
+	potential = {
+		is_romulan = yes
+	}
+
+	modifier = {
+		description = tech_surgery_romulan_effect
+		spies_cap_add = 1 
+	}
+
+	weight_modifier = { 
+		modifier = { 
+			factor = 0 
+			has_modifier = khitomer_aftershock 
+		} 
+	} 
+}
+
+tech_hologram_romulan = {
+
+	cost = @tier3cost3
+	area = society
+	category = { statecraft }
+	tier = 3
+	start_tech = no
+	weight = @tier3weight3   
+
+	potential = {
+		is_romulan = yes
+	}
+
+	modifier = {
+		description = tech_hologram_romulan_effect
+		envoys_add = 1 
+	}
+}
+
+tech_criminal_science_cardassian = {
+
+	cost = @tier2cost1
+	area = society
+	category = { statecraft }
+	tier = 2
+	start_tech = no
+	weight = @tier2weight1
+
+	potential = {
+		is_cardassian = yes
+	}
+
+	modifier = {
+		description = tech_criminal_science_cardassian_effect
+	}
+}
+
+tech_memory_cardassian = {
+
+	cost = @tier3cost2
+	area = society
+	category = { biology }
+	tier = 3
+	start_tech = no
+	weight = @tier3weight2   
+
+	potential = {
+		is_cardassian = yes
+	}
+
+	modifier = {
+		description = tech_memory_cardassian_effect
+		planet_building_build_speed_mult = 0.25 
+	}
+}
+
+tech_strip_mining_cardassan = {
+
+	cost = @tier3cost2
+	area = society
+	category = { military_theory }
+	tier = 3
+	start_tech = no
+	weight = @tier3weight2
+
+	potential = {
+		is_cardassian = yes
+	}
+
+	modifier = {
+		description = tech_strip_mining_cardassan_effect
+	}
+}
+
+########################
+#	DUAL MAPO TECHS   #
+# REQUIRE A MAPO CHECK #
+########################
+
+tech_sports_ufop_klingon = {
+
+	cost = @tier2cost3
+	area = engineering
+	category = { materials }
+	tier = 2
+	start_tech = no
+	weight = @tier2weight3   
+
+	potential = {
+		OR = {
+			is_ufop = yes
+			is_klingon = yes
+		}
+	}
+
+	triggered_config = {			
+		trigger = {		
+			is_ufop = yes	
+		}		
+		title = tech_sports_ufop_klingon
+		desc = tech_sports_ufop_klingon_desc
+		icon = tech_sports_ufop_klingon	
+		prereqfor_desc = {		
+			hide_prereq_for_desc = component	
+			building = {	
+				title = tech_sports_ufop_klingon_ufop_effect
+			}	
+		}		
+	}			
+	triggered_config = {			
+		trigger = {		
+			is_klingon = yes	
+		}		
+		title = tech_sports_ufop_klingon
+		desc = tech_sports_ufop_klingon_desc
+		icon = tech_sports_ufop_klingon			
+		prereqfor_desc = {		
+			hide_prereq_for_desc = component	
+			building = {	
+				title = tech_sports_ufop_klingon_klingon_effect
+			}	
+		}		
+	}
+
+	modifier = {
+		species_leader_exp_gain = 0.1 
+	}
+}
+
+tech_admin_ufop_romulan = {
+
+	cost = @tier2cost3
+	area = society
+	category = { new_worlds }
+	tier = 2
+	start_tech = no
+	weight = @tier2weight3   
+
+	potential = {
+		OR = {
+			is_ufop = yes
+			is_romulan = yes
+		}
+	}
+
+	modifier = {
+		description = tech_admin_ufop_romulan_effect
+		governors_cap_add = 1 
+	}
+}
+
+tech_trades_ufop_cardassian = {
+
+	cost = @tier2cost3
+	area = physics
+	category = { computing }
+	tier = 2
+	start_tech = no
+	weight = @tier2weight3   
+
+	potential = {
+		OR = {
+			is_ufop = yes
+			is_cardassian = yes
+		}
+	}
+
+	modifier = {
+		planet_crime_add = -5
+		planet_jobs_worker_produces_mult = 0.05 
+	}
+}
+
+tech_overcharge_klingon_romulan = {
+
+	cost = @tier2cost3
+	area = engineering
+	category = { propulsion }
+	tier = 2
+	start_tech = no
+	weight = @tier2weight3   
+
+	potential = {
+		OR = {
+			is_klingon = yes
+			is_romulan = yes
+		}
+	}
+
+	modifier = {
+		ship_weapon_damage = 0.1
+		stations_energy_produces_mult = 0.1 
+	}
+}
+
+tech_deployment_klingon_cardassian = {
+
+	cost = @tier2cost3
+	area = engineering
+	category = { industry }
+	tier = 2
+	start_tech = no
+	weight = @tier2weight3   
+
+	potential = {
+		OR = {
+			is_klingon = yes
+			is_cardassian = yes
+		}
+	}
+
+	modifier = {
+		description = tech_deployment_klingon_cardassian_effect
+		starbase_shipyard_build_speed_mult = 0.25 
+	}
+}
+
+tech_scanners_romulan_cardassian = {
+
+	cost = @tier2cost3
+	area = physics
+	category = { computing }
+	tier = 2
+	start_tech = no
+	weight = 10000 #@tier2weight3   
+
+	potential = {
+		OR = {
+			is_romulan = yes
+			is_cardassian = yes
+		}
+	}
+
+	modifier = {
+		pop_housing_usage_mult = -0.15
+		pop_amenities_usage_mult = -0.15 
+	}
+}
+
+##########################################
+#		OFFICER PRODUCTION TECHS		#
+# REQUIRE A MAPO CHECK AND DYNAMIC DESCS #
+##########################################
+
+tech_officers_1 = {
+
+	cost = @tier1cost2
+	area = society
+	category = { military_theory }
+	tier = 1
+	start_tech = no
+	weight = @tier1weight2   
+
+	potential = {
+		is_minor = no
+	}
+
+	triggered_config = {			
+		 trigger = {		
+			 is_ufop = yes	
+		 }		
+		 title = tech_officers_1
+		 desc = tech_officers_1_desc		
+		 icon = tech_officers_1
+		 prereqfor_desc = {		
+			 hide_prereq_for_desc = component	
+			 building = {	
+				 title = tech_officers_1_ufop_effect
+			 }	
+		 }		
+	}	
+
+	triggered_config = {			
+		 trigger = {		
+			 is_klingon = yes	
+		 }		
+		 title = tech_officers_1
+		 desc = tech_officers_1_desc		
+		 icon = tech_officers_1		
+		 prereqfor_desc = {		
+			 hide_prereq_for_desc = component	
+			 building = {	
+				 title = tech_officers_1_klingon_effect
+			 }	
+		 }		
+	}	
+
+	triggered_config = {			
+		 trigger = {		
+			 is_romulan = yes	
+		 }		
+		 title = tech_officers_1
+		 desc = tech_officers_1_desc		
+		 icon = tech_officers_1	
+		 prereqfor_desc = {		
+			 hide_prereq_for_desc = component	
+			 building = {	
+				 title = tech_officers_1_romulan_effect
+			 }	
+		 }		
+	}	
+
+	triggered_config = {			
+		 trigger = {		
+			 is_cardassian = yes	
+		 }		
+		 title = tech_officers_1
+		 desc = tech_officers_1_desc		
+		 icon = tech_officers_1	
+		 prereqfor_desc = {		
+			 hide_prereq_for_desc = component	
+			 building = {	
+				 title = tech_officers_1_cardassian_effect
+			 }	
+		 }		
+	}	
+	
+	modifier = {
+		country_officers_produces_mult = 0.1 
+	}
+}
+
+
+tech_officers_2 = {
+
+	cost = @tier2cost2
+	area = society
+	category = { military_theory }
+	tier = 2
+	start_tech = no
+	weight = @tier2weight2   
+
+	potential = {
+		is_minor = no
+	}
+
+	triggered_config = {			
+		 trigger = {		
+			 is_ufop = yes	
+		 }		
+		 title = tech_officers_2
+		 desc = tech_officers_2_desc		
+		 icon = tech_officers_2		
+		 prereqfor_desc = {		
+			 hide_prereq_for_desc = component	
+			 building = {	
+				 title = tech_officers_2_ufop_effect
+			 }	
+		 }		
+	}	
+
+	triggered_config = {			
+		 trigger = {		
+			 is_klingon = yes	
+		 }		
+		 title = tech_officers_2
+		 desc = tech_officers_2_desc		
+		 icon = tech_officers_2		
+		 prereqfor_desc = {		
+			 hide_prereq_for_desc = component	
+			 building = {	
+				 title = tech_officers_2_klingon_effect
+			 }	
+		 }		
+	}	
+
+	triggered_config = {			
+		 trigger = {		
+			 is_romulan = yes	
+		 }		
+		 title = tech_officers_2
+		 desc = tech_officers_2_desc		
+		 icon = tech_officers_2	
+		 prereqfor_desc = {		
+			 hide_prereq_for_desc = component	
+			 building = {	
+				 title = tech_officers_2_romulan_effect
+			 }	
+		 }		
+	}	
+
+	triggered_config = {			
+		 trigger = {		
+			 is_cardassian = yes	
+		 }		
+		 title = tech_officers_2
+		 desc = tech_officers_2_desc		
+		 icon = tech_officers_2	
+		 prereqfor_desc = {		
+			 hide_prereq_for_desc = component	
+			 building = {	
+				 title = tech_officers_2_cardassian_effect
+			 }	
+		 }		
+	}	
+	
+	modifier = {
+		country_officers_produces_mult = 0.1 
+	}
+}
+
+
+tech_officers_3 = {
+
+	cost = @tier3cost2
+	area = society
+	category = { military_theory }
+	tier = 3
+	start_tech = no
+	weight = @tier3weight2   
+
+	potential = {
+		is_minor = no
+	}
+
+	triggered_config = {			
+		 trigger = {		
+			 is_ufop = yes	
+		 }		
+		 title = tech_officers_3
+		 desc = tech_officers_3_desc		
+		 icon = tech_officers_3
+		 prereqfor_desc = {		
+			 hide_prereq_for_desc = component	
+			 building = {	
+				 title = tech_officers_3_ufop_effect
+			 }	
+		 }		
+	}	
+
+	triggered_config = {			
+		 trigger = {		
+			 is_klingon = yes	
+		 }		
+		 title = tech_officers_3
+		 desc = tech_officers_3_desc		
+		 icon = tech_officers_3
+		 prereqfor_desc = {		
+			 hide_prereq_for_desc = component	
+			 building = {	
+				 title = tech_officers_3_klingon_effect
+			 }	
+		 }		
+	}	
+
+	triggered_config = {			
+		 trigger = {		
+			 is_romulan = yes	
+		 }		
+		 title = tech_officers_3
+		 desc = tech_officers_3_desc		
+		 icon = tech_officers_3
+		 prereqfor_desc = {		
+			 hide_prereq_for_desc = component	
+			 building = {	
+				 title = tech_officers_3_romulan_effect
+			 }	
+		 }		
+	}	
+
+	triggered_config = {			
+		 trigger = {		
+			 is_cardassian = yes	
+		 }		
+		 title = tech_officers_3
+		 desc = tech_officers_3_desc		
+		 icon = tech_officers_3	
+		 prereqfor_desc = {		
+			 hide_prereq_for_desc = component	
+			 building = {	
+				 title = tech_officers_3_cardassian_effect
+			 }	
+		 }		
+	}	
+	
+	modifier = {
+		country_officers_produces_mult = 0.1 
+	}
+}
+
+#########################
+#	 CIVILIAN SHIPS	#
+#		   +		   #
+#	  WARP SPEED 2	 #
+# REQUIRE DYNAMIC ICONS #
+#########################
+
+tech_civilian_ships = {
+
+	area = engineering
+	category = { voidcraft }
+	tier = 0
+	start_tech = yes
+
+	triggered_config = {			
+		trigger = {		
+			is_ufop = yes	
+		}		
+		title = tech_civilian_ships		
+		desc = tech_civilian_ships_desc		
+		icon = tech_civilian_ships_ufop # HRB_TODO: placeholder			
+	}			
+	triggered_config = {			
+		trigger = {		
+			is_klingon = yes	
+		}		
+		title = tech_civilian_ships		
+		desc = tech_civilian_ships_desc		
+		icon = tech_civilian_ships_klingon # HRB_TODO: placeholder		
+	}			
+	triggered_config = {			
+		trigger = {		
+			is_romulan = yes	
+		}		
+		title = tech_civilian_ships		
+		desc = tech_civilian_ships_desc		
+		icon = tech_civilian_ships_romulan # HRB_TODO: placeholder		
+	}			
+	triggered_config = {			
+		trigger = {		
+			is_cardassian = yes	
+		}		
+		title = tech_civilian_ships		
+		desc = tech_civilian_ships_desc		
+		icon = tech_civilian_ships_cardassian # HRB_TODO: placeholder			
+	}	
+}
+
+tech_warp_speed_increase_2 = {
+
+	cost = @tier4cost1
+	area = engineering
+	category = { propulsion }
+	tier = 4
+	start_tech = no
+	prerequisites = { tech_warp_speed_increase_1 }
+	weight = @tier4weight1 
+
+	triggered_config = {			
+		trigger = {		
+			is_ufop = yes	
+		}		
+		title = tech_warp_speed_increase_2		
+		desc = tech_warp_speed_increase_2_desc		
+		icon = tech_warp_speed_increase_2_ufop # HRB_TODO: placeholder			
+	}			
+	triggered_config = {			
+		trigger = {		
+			is_klingon = yes	
+		}		
+		title = tech_warp_speed_increase_2		
+		desc = tech_warp_speed_increase_2_desc		
+		icon = tech_warp_speed_increase_2_klingon # HRB_TODO: placeholder		
+	}			
+	triggered_config = {			
+		trigger = {		
+			is_romulan = yes	
+		}		
+		title = tech_warp_speed_increase_2		
+		desc = tech_warp_speed_increase_2_desc		
+		icon = tech_warp_speed_increase_2_romulan # HRB_TODO: placeholder		
+	}			
+	triggered_config = {			
+		trigger = {		
+			is_cardassian = yes	
+		}		
+		title = tech_warp_speed_increase_2		
+		desc = tech_warp_speed_increase_2_desc		
+		icon = tech_warp_speed_increase_2_cardassian # HRB_TODO: placeholder			
+	}	
+
+	modifier = {
+		ship_warp_speed_mult = 0.20
+	}
+}
+
+#############################################
+#		SPY & GOV CAP INCREASE TECHS	   #
+#	  CAN'T BE SELECTABLE AT THE START	 #
+# MIPOS CAN'T HAVE MORE THAN 1 EXTRA LEADER #
+#############################################
+
+tech_governor_pool_size_tier_1 = {
+
+	cost = @tier1cost2
+	area = society
+	category = { statecraft }
+	tier = 1
+	start_tech = no
+	weight = @tier1weight2   
+	modifier = {
+		governor_skill_levels = 1
+		governors_cap_add = 1 
+	}
+
+	potential = {
+		OR = {
+			is_major = yes
+			AND = {
+				is_minor = yes
+				years_passed > 100
+				has_country_flag = starting_gov
+			}
+		}	
+	}
+}
+
+tech_governor_pool_size_tier_2 = {
+
+	cost = @tier2cost2
+	area = society
+	category = { statecraft }
+	tier = 2
+	start_tech = no
+	prerequisites = { tech_governor_pool_size_tier_1 }
+	weight = @tier2weight2   
+	modifier = {
+		governor_skill_levels = 1
+		governors_cap_add = 1 
+	}
+
+	potential = {
+		is_major = yes
+	}
+}
+
+####################################
+# HABITAT UNLOCK AND UPGRADE TECHS #
+#     NEED CUSTOM DESCRIPTIONS	   #
+####################################
+
+tech_megastructure_1 = {
+
+    cost = @tier2cost3
+    area = engineering
+    category = { industry }
+    tier = 2
+    start_tech = no
+
+	prereqfor_desc = {
+		ship = {
+			title = "allow_habitats"
+			desc = "habitat_0_MEGASTRUCTURE_DETAILS"
+		}
+	}
+}
+
+tech_megastructure_2 = {
+
+    cost = @tier3cost3
+    area = engineering
+    category = { industry }
+    tier = 3
+    start_tech = no
+    prerequisites = { tech_megastructure_1 }
+
+	prereqfor_desc = {
+		ship = {
+			title = "allow_habitat_upgrade"
+			desc = "tech_habitat_2_effect"
+		}
+	}
+}
+
+tech_megastructure_3 = {
+
+    cost = @tier4cost3
+    area = engineering
+    category = { industry }
+    tier = 4
+    start_tech = no
+    prerequisites = { tech_megastructure_2 }
+
+	prereqfor_desc = {
+		ship = {
+			title = "allow_habitat_2_upgrade"
+			desc = "tech_habitat_3_effect"
+		}
+	}
+}
+
+# DLC TECHS
+tech_california_unlock = {
+
+    cost = 8000
+    area = engineering
+    category = { voidcraft }
+    tier = 1
+    start_tech = no
+
+	weight = 999999
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			years_passed < 34
+		}
+		modifier = {
+			factor = 0
+			is_ufop = no
+		}
+		modifier = {
+			factor = 0
+			NOT = {
+				host_has_dlc = "Pre Order Bonus"
+			}
+		}
+	}
+}
+
+####################################
+#          REACTOR TECHS           #
+#     NOT AVAILABLE TO ROMULANS	   #
+####################################
+
+tech_reactor_1 = {
+
+    area = engineering
+    category = { industry }
+    tier = 0
+    start_tech = yes
+
+	potential = {
+		is_romulan = NO
+	}
+}
+
+tech_reactor_2 = {
+
+    cost = @tier1cost1
+    area = engineering
+    category = { industry }
+    tier = 1
+    start_tech = no
+    prerequisites = { tech_reactor_1 }
+    weight = @tier1weight1
+
+	potential = {
+		is_romulan = NO
+	}
+}
+
+tech_reactor_3 = {
+
+    cost = @tier3cost2
+    area = engineering
+    category = { industry }
+    tier = 3
+    start_tech = no
+    prerequisites = { tech_reactor_2 }
+    weight = @tier3weight2
+
+	potential = {
+		is_romulan = NO
+	}
+}
+
+tech_reactor_4 = {
+
+    cost = @tier4cost1
+    area = engineering
+    category = { industry }
+    tier = 4
+    start_tech = no
+    prerequisites = { tech_reactor_3 }
+    weight = @tier4weight1
+
+	potential = {
+		is_romulan = NO
+	}
+}

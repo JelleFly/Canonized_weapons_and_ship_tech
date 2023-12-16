@@ -1,0 +1,75 @@
+
+tech_disruptor_1 = {
+
+    cost = @tier2cost3
+    area = physics
+    category = { field_manipulation }
+    tier = 2
+    start_tech = no
+    weight = @tier2weight3
+}
+
+tech_disruptor_2 = {
+
+    cost = @tier3cost3
+    area = physics
+    category = { field_manipulation }
+    tier = 3
+    start_tech = no
+    prerequisites = { tech_disruptor_1 }
+    weight = @tier3weight3
+}
+
+tech_disruptor_3 = {
+
+    cost = @tier4cost3
+    area = physics
+    category = { field_manipulation }
+    tier = 4
+    start_tech = no
+    prerequisites = { tech_disruptor_2 }
+    weight = @tier4weight3
+}
+
+tech_phaser_big_1 = {
+
+    cost = @tier2cost3
+    area = physics
+    category = { particles }
+    tier = 2
+    start_tech = no
+    weight = @tier2weight3
+}
+
+
+tech_shield_disruptor_1 = {
+
+    cost = @tier2cost2
+    area = physics
+    category = { field_manipulation }
+    tier = 2
+    start_tech = no
+    weight = @tier2weight2
+}
+
+tech_shield_disruptor_2 = {
+
+    cost = @tier3cost2
+    area = physics
+    category = { field_manipulation }
+    tier = 3
+    start_tech = no
+    prerequisites = { tech_shield_disruptor_1 }
+    weight = @tier3weight2
+}
+
+tech_shield_disruptor_3 = {
+
+    cost = @tier4cost2
+    area = physics
+    category = { field_manipulation }
+    tier = 4
+    start_tech = no
+    prerequisites = { tech_shield_disruptor_2 }
+    weight = @tier4weight2
+}

@@ -1,0 +1,256 @@
+##################################
+# SHIP CREATION EFFICIENCY TECHS #
+#		 REQUIRE DESCS		  #
+##################################
+
+tech_corvette_build_speed_cost = {
+	cost = @tier1cost3
+	area = engineering
+	category = { voidcraft }
+	tier = 1
+	start_tech = no
+	prerequisites = { tech_corvette_unlock }
+	weight = @tier1weight3
+
+	triggered_config = {			
+		trigger = { is_ufop = yes }		
+		title = tech_efficiency_miranda		
+		desc = tech_efficiency_miranda_desc		
+		icon = tech_miranda_build_speed_cost # HRB_TODO: placeholder
+		modifier = {
+			shipsize_miranda_build_speed_mult = 0.25
+		}		
+	}			
+	triggered_config = {			
+		trigger = { is_klingon = yes }		
+		title = tech_efficiency_bird_of_prey		
+		desc = tech_efficiency_bird_of_prey_desc		
+		icon = tech_bird_of_prey_build_speed_cost # HRB_TODO: placeholder
+		modifier = {
+			shipsize_bird_of_prey_build_speed_mult = 0.25
+		}		
+	}			
+	triggered_config = {			
+		trigger = { is_romulan = yes }		
+		title = tech_efficiency_ferrax		
+		desc = tech_efficiency_ferrax_desc		
+		icon = tech_romulan_bird_of_prey_build_speed_cost # HRB_TODO: placeholder		
+		modifier = {
+			shipsize_ferrax_build_speed_mult = 0.25
+		}		
+	}			
+	triggered_config = {			
+		trigger = { is_cardassian = yes }		
+		title = tech_efficiency_hideki		
+		desc = tech_efficiency_hideki_desc		
+		icon = tech_hideki_build_speed_cost # HRB_TODO: placeholder		
+		modifier = {
+			shipsize_hideki_build_speed_mult = 0.25
+		}		
+	}			
+	
+	modifier = {
+		ship_evasion_add = 5
+	}
+}
+
+tech_destroyer_build_speed_cost = {
+	cost = @tier2cost3
+	area = engineering
+	category = { voidcraft }
+	tier = 2
+	start_tech = no
+	prerequisites = { tech_destroyer_unlock }
+	weight = @tier2weight3   
+	
+	triggered_config = {		
+		trigger = { is_ufop = yes }	
+		title = tech_efficiency_intrepid	
+		desc = tech_efficiency_intrepid_desc	
+		icon = tech_intrepid_build_speed_cost # HRB_TODO: placeholder	
+		modifier = {	
+			shipsize_intrepid_build_speed_mult = 0.25
+		}	
+	}		
+	triggered_config = {		
+		trigger = { is_klingon = yes }	
+		title = tech_efficiency_warbird	
+		desc = tech_efficiency_warbird_desc	
+		icon = tech_warbird_build_speed_cost # HRB_TODO: placeholder	
+		modifier = {	
+			shipsize_warbird_build_speed_mult = 0.25
+		}	
+	}		
+	triggered_config = {		
+		trigger = { is_romulan = yes }	
+		title = tech_efficiency_vindius	
+		desc = tech_efficiency_vindius_desc	
+		icon = tech_vindius_build_speed_cost # HRB_TODO: placeholder	
+		modifier = {	
+			shipsize_vindius_build_speed_mult = 0.25
+		}	
+	}		
+	triggered_config = {		
+		trigger = { is_cardassian = yes }	
+		title = tech_efficiency_galor	
+		desc = tech_efficiency_galor_desc	
+		icon = tech_galor_build_speed_cost # HRB_TODO: placeholder	
+		modifier = {	
+			shipsize_galor_build_speed_mult = 0.25
+		}	
+	}	
+
+	modifier = {
+		ship_shield_mult = 0.05
+	}
+}
+
+tech_cruiser_build_speed_cost = {
+	cost = @tier3cost3
+	area = engineering
+	category = { voidcraft }
+	tier = 3
+	start_tech = no
+	prerequisites = { tech_cruiser_unlock }
+	weight = @tier3weight3   
+	triggered_config = {		
+		trigger = { is_ufop = yes }	
+		title = tech_efficiency_excelsior	
+		desc = tech_efficiency_excelsior_desc	
+		icon = tech_excelsior_build_speed_cost # HRB_TODO: placeholder	
+		modifier = {	
+			shipsize_excelsior_build_speed_mult = 0.25
+		}	
+	}		
+	triggered_config = {		
+		trigger = { is_klingon = yes }	
+		title = tech_efficiency_ktinga	
+		desc = tech_efficiency_ktinga_desc	
+		icon = tech_ktinga_build_speed_cost # HRB_TODO: placeholder	
+		modifier = {	
+			shipsize_ktinga_build_speed_mult = 0.25
+		}	
+	}		
+	triggered_config = {		
+		trigger = { is_romulan = yes }	
+		title = tech_efficiency_valdore	
+		desc = tech_efficiency_valdore_desc	
+		icon = tech_valdore_build_speed_cost # HRB_TODO: placeholder	
+		modifier = {	
+			shipsize_valdore_build_speed_mult = 0.25
+		}	
+	}		
+	triggered_config = {		
+		trigger = { is_cardassian = yes }	
+		title = tech_efficiency_keldon	
+		desc = tech_efficiency_keldon_desc	
+		icon = tech_keldon_build_speed_cost # HRB_TODO: placeholder	
+		modifier = {	
+			shipsize_keldon_build_speed_mult = 0.25
+		}	
+	}		
+
+	modifier = {
+		ship_fire_rate_mult = 0.05
+	}
+}
+
+tech_battleship_build_speed_cost = {
+	cost = @tier4cost3
+	area = engineering
+	category = { voidcraft }
+	tier = 4
+	start_tech = no
+	prerequisites = { tech_battleship_unlock }
+	weight = @tier4weight3   
+	triggered_config = {		
+		trigger = { is_ufop = yes }	
+		title = tech_efficiency_galaxy	
+		desc = tech_efficiency_galaxy_desc	
+		icon = tech_galaxy_build_speed_cost # HRB_TODO: placeholder	
+		modifier = {	
+			shipsize_galaxy_build_speed_mult = 0.25
+		}	
+	}		
+	triggered_config = {		
+		trigger = { is_klingon = yes }	
+		title = tech_efficiency_vorcha	
+		desc = tech_efficiency_vorcha_desc	
+		icon = tech_vorcha_build_speed_cost # HRB_TODO: placeholder	
+		modifier = {	
+			shipsize_vorcha_build_speed_mult = 0.25
+		}	
+	}		
+	triggered_config = {		
+		trigger = { is_romulan = yes }	
+		title = tech_efficiency_dderidex	
+		desc = tech_efficiency_dderidex_desc	
+		icon = tech_dderidex_build_speed_cost # HRB_TODO: placeholder	
+		modifier = {	
+			shipsize_dderidex_build_speed_mult = 0.25
+		}	
+	}		
+	triggered_config = {		
+		trigger = { is_cardassian = yes }	
+		title = tech_efficiency_kazikai	
+		desc = tech_efficiency_kazikai_desc	
+		icon = tech_kazikai_build_speed_cost # HRB_TODO: placeholder	
+		modifier = {	
+			shipsize_kazikai_build_speed_mult = 0.25
+		}	
+	}		
+
+	modifier = {
+		ship_hull_mult = 0.05
+	}
+}
+
+tech_titan_build_speed_cost = {
+	cost = @tier5cost3
+	area = engineering
+	category = { voidcraft }
+	tier = 5
+	start_tech = no
+	prerequisites = { tech_titan_unlock }
+	weight = @tier5weight3   
+	triggered_config = {		
+		trigger = { is_ufop = yes }	
+		title = tech_efficiency_sovereign	
+		desc = tech_efficiency_sovereign_desc	
+		icon = tech_sovereign_build_speed_cost # HRB_TODO: placeholder	
+		modifier = {	
+			shipsize_sovereign_build_speed_mult = 0.25
+		}	
+	}		
+	triggered_config = {		
+		trigger = { is_klingon = yes }	
+		title = tech_efficiency_neghvar	
+		desc = tech_efficiency_neghvar_desc	
+		icon = tech_neghvar_build_speed_cost # HRB_TODO: placeholder	
+		modifier = {	
+			shipsize_neghvar_build_speed_mult = 0.25
+		}	
+	}		
+	triggered_config = {		
+		trigger = { is_romulan = yes }	
+		title = tech_efficiency_majestus	
+		desc = tech_efficiency_majestus_desc	
+		icon = tech_majestus_build_speed_cost # HRB_TODO: placeholder	
+		modifier = {	
+			shipsize_majestus_build_speed_mult = 0.25
+		}	
+	}		
+	triggered_config = {		
+		trigger = { is_cardassian = yes }	
+		title = tech_efficiency_nokoram	
+		desc = tech_efficiency_nokoram_desc	
+		icon = tech_nokoram_build_speed_cost # HRB_TODO: placeholder	
+		modifier = {	
+			shipsize_nokoram_build_speed_mult = 0.25
+		}	
+	}		
+
+	modifier = {
+		ship_weapon_damage = 0.05
+	}
+}

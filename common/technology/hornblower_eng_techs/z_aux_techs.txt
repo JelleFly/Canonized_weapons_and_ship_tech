@@ -1,0 +1,61 @@
+
+tech_battery_1 = {
+
+    area = engineering
+    category = { materials }
+    tier = 0
+    start_tech = yes
+}
+
+tech_battery_2 = {
+
+    cost = @tier2cost3
+    area = engineering
+    category = { materials }
+    tier = 2
+    start_tech = no
+    prerequisites = { tech_battery_1 }
+    weight = @tier2weight3
+}
+
+tech_battery_3 = {
+
+    cost = @tier4cost1
+    area = engineering
+    category = { materials }
+    tier = 4
+    start_tech = no
+    prerequisites = { tech_battery_2 }
+    weight = @tier4weight1
+}
+
+tech_aux_engine_1 = {
+
+    cost = @tier1cost3
+    area = engineering
+    category = { propulsion }
+    tier = 1
+    start_tech = no
+    weight = @tier1weight3
+}
+
+tech_aux_engine_2 = {
+
+    cost = @tier4cost3
+    area = engineering
+    category = { propulsion }
+    tier = 4
+    start_tech = no
+    prerequisites = { tech_aux_engine_1 }
+    weight = @tier4weight3
+}
+
+
+tech_escape_pod_1 = {
+
+    cost = @tier1cost3
+    area = engineering
+    category = { voidcraft }
+    tier = 1
+    weight = @tier1weight3
+}

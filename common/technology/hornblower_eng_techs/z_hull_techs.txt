@@ -1,0 +1,41 @@
+
+tech_hull_1 = {
+
+    area = engineering
+    category = { materials }
+    tier = 0
+    start_tech = yes
+}
+
+tech_hull_2 = {
+
+    cost = @tier2cost3
+    area = engineering
+    category = { materials }
+    tier = 2
+    start_tech = no
+    prerequisites = { tech_hull_1 }
+    weight = @tier2weight3
+}
+
+tech_hull_3 = {
+
+    cost = @tier3cost3
+    area = engineering
+    category = { materials }
+    tier = 3
+    start_tech = no
+    prerequisites = { tech_hull_2 }
+    weight = @tier3weight3
+}
+
+tech_hull_4 = {
+
+    cost = @tier4cost3
+    area = engineering
+    category = { materials }
+    tier = 4
+    start_tech = no
+    prerequisites = { tech_hull_3 }
+    weight = @tier4weight3
+}

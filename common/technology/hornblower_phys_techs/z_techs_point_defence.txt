@@ -1,0 +1,30 @@
+
+tech_point_defense_1 = {
+
+    area = physics
+    category = { particles }
+    tier = 0
+    start_tech = yes
+}
+
+tech_point_defense_2 = {
+
+    cost = @tier2cost2
+    area = physics
+    category = { particles }
+    tier = 2
+    start_tech = no
+    prerequisites = { tech_point_defense_1 }
+    weight = @tier2weight2
+}
+
+tech_point_defense_3 = {
+
+    cost = @tier4cost2
+    area = physics
+    category = { particles }
+    tier = 4
+    start_tech = no
+    prerequisites = { tech_point_defense_2 }
+    weight = @tier4weight2
+}

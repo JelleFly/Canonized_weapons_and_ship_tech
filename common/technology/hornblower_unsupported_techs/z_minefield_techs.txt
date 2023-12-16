@@ -1,0 +1,122 @@
+
+############################
+#	 MINE UNLOCK TECH	 #
+# REQUIRES SPECIFIC WEIGTS #
+############################
+
+tech_minefields_tier_1 = {
+	area = engineering
+	cost = @tier1cost1
+	category = { materials }
+	tier = 1
+	weight = @tier1weight1
+
+	triggered_config = {			
+		trigger = {		
+			is_ufop = yes	
+		}		
+		title = tech_minefields_tier_1		
+		desc = tech_minefields_tier_1_desc		
+		icon = tech_minefields_tier_1_ufop # HRB_TODO: placeholder			
+	}			
+	triggered_config = {			
+		trigger = {		
+			is_klingon = yes	
+		}		
+		title = tech_minefields_tier_1		
+		desc = tech_minefields_tier_1_desc		
+		icon = tech_minefields_tier_1_klingon # HRB_TODO: placeholder		
+	}			
+	triggered_config = {			
+		trigger = {		
+			is_romulan = yes	
+		}		
+		title = tech_minefields_tier_1		
+		desc = tech_minefields_tier_1_desc		
+		icon = tech_minefields_tier_1_romulan # HRB_TODO: placeholder		
+	}			
+	triggered_config = {			
+		trigger = {		
+			is_cardassian = yes	
+		}		
+		title = tech_minefields_tier_1		
+		desc = tech_minefields_tier_1_desc		
+		icon = tech_minefields_tier_1_cardassian # HRB_TODO: placeholder			
+	}		
+
+	weight_modifier = {
+		factor = 0.50
+		# modifier = {
+		# 	factor = @ap_technological_ascendancy_rare_tech
+		# 	has_ascension_perk = ap_technological_ascendancy
+		# }
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				# has_trait = leader_trait_expertise_field_manipulation
+			}
+		}
+	}
+
+	ai_weight = {
+		factor = 4 # Mines are good
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				# has_trait = leader_trait_expertise_field_manipulation
+			}
+		}
+	}
+}
+
+tech_minefields_tier_2 = {
+
+	cost = @tier3cost3
+	area = engineering
+	category = { propulsion }
+	tier = 3
+	start_tech = no
+	prerequisites = { tech_minefields_tier_1 }
+	weight = @tier3weight3   
+
+	triggered_config = {			
+		trigger = {		
+			is_ufop = yes	
+		}		
+		title = tech_minefields_tier_2		
+		desc = tech_minefields_tier_2_desc		
+		icon = tech_minefields_tier_2_ufop # HRB_TODO: placeholder			
+	}			
+	triggered_config = {			
+		trigger = {		
+			is_klingon = yes	
+		}		
+		title = tech_minefields_tier_2		
+		desc = tech_minefields_tier_2_desc		
+		icon = tech_minefields_tier_2_klingon # HRB_TODO: placeholder		
+	}			
+	triggered_config = {			
+		trigger = {		
+			is_romulan = yes	
+		}		
+		title = tech_minefields_tier_2		
+		desc = tech_minefields_tier_2_desc		
+		icon = tech_minefields_tier_2_romulan # HRB_TODO: placeholder		
+	}			
+	triggered_config = {			
+		trigger = {		
+			is_cardassian = yes	
+		}		
+		title = tech_minefields_tier_2		
+		desc = tech_minefields_tier_2_desc		
+		icon = tech_minefields_tier_2_cardassian # HRB_TODO: placeholder			
+	}	
+
+	modifier = {
+		mine_field_accuracy_mult = 0.25
+		mine_field_damage_mult = 0.25
+		mine_field_shield_penetration_mult = 0.25 
+	}
+}

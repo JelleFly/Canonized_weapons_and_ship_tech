@@ -1,0 +1,500 @@
+####################################
+#		  NEW HULL TECHS		  #
+# REQUIRE CUSTOM WEIGHTS AND DESCS #
+####################################
+tech_corvette_unlock = {
+	area = engineering
+	category = { voidcraft }
+	tier = 0
+	start_tech = yes
+	triggered_config = {			
+		trigger = {		
+			is_ufop = yes	
+		}		
+		title = tech_miranda		
+		desc = tech_miranda_desc		
+		icon = tech_miranda # HRB_TODO: placeholder		
+		prereqfor_desc = {		
+			ship = {	
+				title = TECH_UNLOCK_MIRANDA_CONSTRUCTION_TITLE
+				desc = tech_miranda_desc
+			}	
+		}		
+	}			
+	triggered_config = {			
+		trigger = {		
+			is_klingon = yes	
+		}		
+		title = tech_bird_of_prey		
+		desc = tech_bird_of_prey_desc		
+		icon = tech_bird_of_prey # HRB_TODO: placeholder		
+		prereqfor_desc = {		
+			ship = {	
+				title = TECH_UNLOCK_BIRD_OF_PREY_CONSTRUCTION_TITLE
+				desc = tech_bird_of_prey_desc
+			}	
+		}		
+	}			
+	triggered_config = {			
+		trigger = {		
+			is_romulan = yes	
+		}		
+		title = tech_ferrax		
+		desc = tech_ferrax_desc		
+		icon = tech_romulan_bird_of_prey # HRB_TODO: placeholder		
+		prereqfor_desc = {		
+			ship = {	
+				title = TECH_UNLOCK_FERRAX_CONSTRUCTION_TITLE
+				desc = tech_ferrax_desc
+			}	
+		}		
+	}			
+	triggered_config = {			
+		trigger = {		
+			is_cardassian = yes	
+		}		
+		title = tech_hideki		
+		desc = tech_hideki_desc		
+		icon = tech_hideki # HRB_TODO: placeholder		
+		prereqfor_desc = {		
+			ship = {	
+				title = TECH_UNLOCK_HIDEKI_CONSTRUCTION_TITLE
+				desc = tech_hideki_desc
+			}	
+		}		
+	}			
+}
+
+tech_defiant = {
+	cost = @tier2cost2
+	area = engineering
+	category = { voidcraft }
+	tier = 0
+	start_tech = no
+	#hidden = yes #we dont want the tech to be acquirable by normal means, however making it hidden caused other issues so we used weight 0 instead
+	weight = 0
+	
+	potential = {
+		is_ufop = yes	
+	}	
+}
+
+tech_destroyer_unlock = {
+	cost = @tier2cost2
+	area = engineering
+	category = { voidcraft }
+	tier = 2
+	start_tech = no
+	prerequisites = { tech_corvette_unlock }
+	weight = @specialhullweight #@tier2weight2
+	triggered_config = {			
+		trigger = {		
+			is_ufop = yes	
+		}		
+		title = tech_intrepid		
+		desc = tech_intrepid_desc		
+		icon = tech_intrepid # HRB_TODO: placeholder		
+		prereqfor_desc = {		
+			ship = {	
+				title = TECH_UNLOCK_INTREPID_CONSTRUCTION_TITLE
+				desc = tech_intrepid_desc
+			}	
+		}		
+	}			
+	triggered_config = {			
+		trigger = {		
+			is_klingon = yes	
+		}		
+		title = tech_warbird		
+		desc = tech_warbird_desc		
+		icon = tech_warbird # HRB_TODO: placeholder		
+		prereqfor_desc = {		
+			ship = {	
+				title = TECH_UNLOCK_WARBIRD_CONSTRUCTION_TITLE
+				desc = tech_warbird_desc
+			}	
+		}		
+	}			
+	triggered_config = {			
+		trigger = {		
+			is_romulan = yes	
+		}		
+		title = tech_vindius		
+		desc = tech_vindius_desc		
+		icon = tech_vindius # HRB_TODO: placeholder		
+		prereqfor_desc = {		
+			ship = {	
+				title = TECH_UNLOCK_VINDIUS_CONSTRUCTION_TITLE
+				desc = tech_vindius_desc
+			}	
+		}		
+	}			
+	triggered_config = {			
+		trigger = {		
+			is_cardassian = yes	
+		}		
+		title = tech_galor		
+		desc = tech_galor_desc		
+		icon = tech_galor # HRB_TODO: placeholder		
+		prereqfor_desc = {		
+			ship = {	
+				title = TECH_UNLOCK_GALOR_CONSTRUCTION_TITLE
+				desc = tech_galor_desc
+			}	
+		}		
+	}			
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			years_passed < 10
+		}
+		modifier = {
+			factor = 8
+			years_passed > 18
+		}
+		modifier = {
+			factor = 8
+			any_neighbor_country = {
+				has_technology = tech_destroyer_unlock
+			}
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_conquest_adopt
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_defense_adopt
+		}
+
+		#Boost for Cardassians
+		modifier = {
+			factor = 1.25
+			is_cardassian = yes
+		}
+	}
+	ai_weight = {
+		factor = 4 # Hulls are good
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+			}
+		}
+	}
+}
+
+tech_cruiser_unlock = {
+	cost = @tier3cost2
+	area = engineering
+	category = { voidcraft }
+	tier = 3
+	start_tech = no
+	prerequisites = { tech_destroyer_unlock }
+	weight = @specialhullweight #@tier3weight2
+	triggered_config = {			
+		trigger = {		
+			is_ufop = yes	
+		}		
+		title = tech_excelsior		
+		desc = tech_excelsior_desc		
+		icon = tech_excelsior # HRB_TODO: placeholder		
+		prereqfor_desc = {		
+			ship = {	
+				title = TECH_UNLOCK_EXCELSIOR_CONSTRUCTION_TITLE
+				desc = tech_excelsior_desc
+			}	
+		}		
+	}			
+	triggered_config = {			
+		trigger = {		
+			is_klingon = yes	
+		}		
+		title = tech_ktinga		
+		desc = tech_ktinga_desc		
+		icon = tech_ktinga # HRB_TODO: placeholder		
+		prereqfor_desc = {		
+			ship = {	
+				title = TECH_UNLOCK_KTINGA_CONSTRUCTION_TITLE
+				desc = tech_ktinga_desc
+			}	
+		}		
+	}			
+	triggered_config = {			
+		trigger = {		
+			is_romulan = yes	
+		}		
+		title = tech_valdore		
+		desc = tech_valdore_desc		
+		icon = tech_valdore # HRB_TODO: placeholder		
+		prereqfor_desc = {		
+			ship = {	
+				title = TECH_UNLOCK_VALDORE_CONSTRUCTION_TITLE
+				desc = tech_valdore_desc
+			}	
+		}		
+	}			
+	triggered_config = {			
+		trigger = {		
+			is_cardassian = yes	
+		}		
+		title = tech_keldon		
+		desc = tech_keldon_desc		
+		icon = tech_keldon # HRB_TODO: placeholder		
+		prereqfor_desc = {		
+			ship = {	
+				title = TECH_UNLOCK_KELDON_CONSTRUCTION_TITLE
+				desc = tech_keldon_desc
+			}	
+		}		
+	}			
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			years_passed < 50
+		}
+		modifier = {
+			factor = 7
+			years_passed > 58
+		}
+		modifier = {
+			factor = 7
+			any_neighbor_country = {
+			has_technology = tech_cruiser_unlock
+			}
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_conquest_adopt
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_defense_adopt
+		}
+
+		#Boost for Klingons
+		modifier = {
+			factor = 1.25
+			is_klingon = yes
+		}
+	}
+	ai_weight = {
+		factor = 5 # Hulls are good
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+			}
+		}
+	}
+}
+
+tech_battleship_unlock = {
+	cost = @tier4cost2
+	area = engineering
+	category = { voidcraft }
+	tier = 4
+	start_tech = no
+	prerequisites = { tech_cruiser_unlock }
+	weight = @specialhullweight #@tier4weight2
+	triggered_config = {			
+		trigger = {		
+			is_ufop = yes	
+		}		
+		title = tech_galaxy		
+		desc = tech_galaxy_desc		
+		icon = tech_galaxy # HRB_TODO: placeholder		
+		prereqfor_desc = {		
+			ship = {	
+				title = TECH_UNLOCK_GALAXY_CONSTRUCTION_TITLE
+				desc = tech_galaxy_desc
+			}	
+		}		
+	}			
+	triggered_config = {			
+		trigger = {		
+			is_klingon = yes	
+		}		
+		title = tech_vorcha		
+		desc = tech_vorcha_desc		
+		icon = tech_vorcha # HRB_TODO: placeholder		
+		prereqfor_desc = {		
+			ship = {	
+				title = TECH_UNLOCK_VORCHA_CONSTRUCTION_TITLE
+				desc = tech_vorcha_desc
+			}	
+		}		
+	}			
+	triggered_config = {			
+		trigger = {		
+			is_romulan = yes	
+		}		
+		title = tech_dderidex		
+		desc = tech_dderidex_desc		
+		icon = tech_dderidex # HRB_TODO: placeholder		
+		prereqfor_desc = {		
+			ship = {	
+				title = TECH_UNLOCK_DDERIDEX_CONSTRUCTION_TITLE
+				desc = tech_dderidex_desc
+			}	
+		}		
+	}			
+	triggered_config = {			
+		trigger = {		
+			is_cardassian = yes	
+		}		
+		title = tech_kazikai		
+		desc = tech_kazikai_desc		
+		icon = tech_kazikai # HRB_TODO: placeholder		
+		prereqfor_desc = {		
+			ship = {	
+				title = TECH_UNLOCK_KAZIKAI_CONSTRUCTION_TITLE
+				desc = tech_kazikai_desc
+			}	
+		}		
+	}			
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			years_passed < 80
+		}
+		modifier = {
+			factor = 6
+			years_passed > 88
+		}
+		modifier = {
+			factor = 6
+			any_neighbor_country = {
+			has_technology = tech_battleship_unlock
+			}
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_conquest_adopt
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_defense_adopt
+		}
+
+		#Boost for the UFOP
+		modifier = {
+			factor = 1.25
+			is_ufop = yes
+		}
+	}
+	ai_weight = {
+		factor = 6 # Hulls are good
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+			}
+		}
+	}
+}
+
+tech_titan_unlock = {
+	cost = @tier5cost2
+	area = engineering
+	category = { voidcraft }
+	tier = 5
+	start_tech = no
+	prerequisites = { tech_battleship_unlock }
+	weight = @specialhullweight #@tier5weight2
+	triggered_config = {			
+		trigger = {		
+			is_ufop = yes	
+		}		
+		title = tech_sovereign		
+		desc = tech_sovereign_desc		
+		icon = tech_sovereign # HRB_TODO: placeholder		
+		prereqfor_desc = {		
+			ship = {	
+				title = TECH_UNLOCK_SOVEREIGN_CONSTRUCTION_TITLE
+				desc = tech_sovereign_desc
+			}	
+		}		
+	}			
+	triggered_config = {			
+		trigger = {		
+			is_klingon = yes	
+		}		
+		title = tech_neghvar		
+		desc = tech_neghvar_desc		
+		icon = tech_neghvar # HRB_TODO: placeholder		
+		prereqfor_desc = {		
+			ship = {	
+				title = TECH_UNLOCK_NEGHVAR_CONSTRUCTION_TITLE
+				desc = tech_neghvar_desc
+			}	
+		}		
+	}			
+	triggered_config = {			
+		trigger = {		
+			is_romulan = yes	
+		}		
+		title = tech_majestus		
+		desc = tech_majestus_desc		
+		icon = tech_majestus # HRB_TODO: placeholder		
+		prereqfor_desc = {		
+			ship = {	
+				title = TECH_UNLOCK_MAJESTUS_CONSTRUCTION_TITLE
+				desc = tech_majestus_desc
+			}	
+		}		
+	}			
+	triggered_config = {			
+		trigger = {		
+			is_cardassian = yes	
+		}		
+		title = tech_nokoram		
+		desc = tech_nokoram_desc		
+		icon = tech_nokoram # HRB_TODO: placeholder		
+		prereqfor_desc = {		
+			ship = {	
+				title = TECH_UNLOCK_NOKORAM_CONSTRUCTION_TITLE
+				desc = tech_nokoram_desc
+			}	
+		}		
+	}			
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			years_passed < 110
+		}
+		modifier = {
+			factor = 5
+			years_passed > 118
+		}
+		modifier = {
+			factor = 5
+			any_neighbor_country = {
+			has_technology = tech_titan_unlock
+			}
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_conquest_adopt
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_defense_adopt
+		}
+
+		#Boost for Romulans
+		modifier = {
+			factor = 1.25
+			is_romulan = yes
+		}
+	}
+	ai_weight = {
+		factor = 7 # Hulls are good
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+			}
+		}
+	}
+}

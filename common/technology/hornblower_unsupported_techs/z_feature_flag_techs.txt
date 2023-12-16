@@ -1,0 +1,120 @@
+############################
+#	FEATURE FLAG TECHS	#
+# REQUIRE UNLOCKING A FLAG #
+############################
+
+tech_enable_automatic_surveying = {
+
+	area = physics
+	category = { computing }
+	tier = 0
+	start_tech = yes
+
+	#allow auto-explore on science ships
+	feature_flags = {
+		tech_automated_exploration
+		unlocks_auto_research
+	}
+}
+
+tech_terraforming = {
+
+	cost = @tier3cost2
+	area = society
+	category = { new_worlds }
+	tier = 3
+	start_tech = no
+	weight = @tier3weight2
+
+	feature_flags = {
+		build_terraform_station
+	}
+}
+
+tech_advanced_terraforming = {
+
+	cost = @tier4cost2
+	area = society
+	category = { new_worlds }
+	tier = 4
+	start_tech = no
+	prerequisites = { tech_terraforming }
+	weight = @tier4weight2
+
+	feature_flags = {
+		terraform_inhabited
+	}
+}
+
+# Won't be implementing this tech, but leaving it commented for later
+
+# tech_wormhole_travel_unique = {
+
+# 	cost = @tier3cost3
+# 	area = physics
+# 	category = { field_manipulation }
+# 	tier = 3
+# 	start_tech = no
+# 	weight = @tier3weight3
+
+# 	feature_flags = { 
+# 		wormhole_stabilization 
+# 	}
+# }
+
+tech_cloaking_device_1 = {
+
+	cost = @tier1cost3
+	area = physics
+	category = { field_manipulation }
+	tier = 1
+	weight = @tier1weight3
+
+	potential = {
+
+		OR = {
+			AND = {
+				has_origin = origin_ufop
+				owner = {
+					has_country_flag = qt_ufop_control_neutral_zone_finished
+				}
+			}
+
+			NOT = {
+				has_origin = origin_default
+				has_origin = origin_ufop
+			}
+		}   
+	}
+}
+
+## Highway Fluctuations Scanner (T1) 
+tech_highway_fluctuations_scanner = { 
+	cost = @tier1cost2 
+	area = physics 
+	category = { computing } 
+	tier = 1 
+	start_tech = no 
+	ai_update_type = all 
+	weight = @tier1weight2
+
+	modifier = {
+		description = tech_highway_fluctuations_scanner_effect
+	}
+} 
+
+## Highway Stabilization Field (T2) 
+tech_highway_stabilization_field = { 
+	cost = @tier2cost2 
+	area = physics 
+	category = { computing } 
+	tier = 2 
+	start_tech = no 
+	ai_update_type = all 
+	prerequisites = { tech_highway_fluctuations_scanner } 
+	weight = @tier2weight2
+
+	modifier = {
+		description = tech_highway_stabilization_field_effect
+	}
+}

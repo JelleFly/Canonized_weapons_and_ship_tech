@@ -1,0 +1,154 @@
+
+tech_shield_1 = {
+
+    area = physics
+    category = { field_manipulation }
+	tier = 0
+    start_tech = yes
+}
+
+tech_shield_2 = {
+
+    cost = @tier1cost2
+    area = physics
+    category = { field_manipulation }
+    tier = 1
+    start_tech = no
+    prerequisites = { tech_shield_1 }
+    weight = @tier1weight2
+}
+
+tech_shield_3 = {
+
+    cost = @tier2cost2
+    area = physics
+    category = { field_manipulation }
+    tier = 2
+    start_tech = no
+    prerequisites = { tech_shield_2 }
+    weight = @tier2weight2
+}
+
+tech_shield_4 = {
+
+    cost = @tier4cost2
+    area = physics
+    category = { field_manipulation }
+    tier = 4
+    start_tech = no
+    prerequisites = { tech_shield_3 }
+    weight = @tier4weight2
+}
+
+tech_shield_5 = {
+
+    cost = @tier5cost2
+    area = physics
+    category = { field_manipulation }
+    tier = 5
+    start_tech = no
+    prerequisites = { tech_shield_4 }
+    weight = @tier5weight2
+}
+
+
+tech_sensor_1 = {
+
+    area = physics
+    category = { computing }
+    tier = 0
+    start_tech = yes
+}
+
+tech_sensor_2 = {
+
+    cost = @tier1cost1
+    area = physics
+    category = { computing }
+    tier = 1
+    start_tech = no
+    prerequisites = { tech_sensor_1 }
+    weight = @tier1weight1
+}
+
+tech_sensor_3 = {
+
+    cost = @tier3cost3
+    area = physics
+    category = { computing }
+    tier = 3
+    start_tech = no
+    prerequisites = { tech_sensor_2 }
+    weight = @tier3weight3
+}
+
+tech_sensor_4 = {
+
+    cost = @tier4cost3
+    area = physics
+    category = { computing }
+    tier = 4
+    start_tech = no
+    prerequisites = { tech_sensor_3 }
+    weight = @tier4weight3
+}
+
+tech_computer_1 = {
+
+    area = physics
+    category = { computing }
+    tier = 0
+    start_tech = yes
+}
+
+tech_computer_2 = {
+
+    cost = @tier2cost1
+    area = physics
+    category = { computing }
+    tier = 2
+    start_tech = no
+    prerequisites = { tech_computer_1 }
+    weight = @tier2weight1
+}
+
+tech_computer_3 = {
+
+    cost = @tier3cost2
+    area = physics
+    category = { computing }
+    tier = 3
+    start_tech = no
+    prerequisites = { tech_computer_2 }
+    weight = @tier3weight2
+}
+
+tech_warp_drive_1 = {
+
+    area = physics
+    category = { field_manipulation }
+    tier = 0
+    start_tech = yes
+}
+
+tech_warp_drive_2 = {
+
+    cost = @tier2cost3
+    area = physics
+    category = { field_manipulation }
+    tier = 2
+    start_tech = no
+    prerequisites = { tech_warp_drive_1 }
+    weight = @tier2weight3
+}
+
+tech_warp_drive_3 = {
+
+    cost = @tier1cost2
+    area = physics
+    category = { field_manipulation }
+    tier = 1
+    start_tech = no
+    prerequisites = { tech_warp_drive_2 }
+    weight = @tier1weight2
+}

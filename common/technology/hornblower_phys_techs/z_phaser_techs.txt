@@ -1,0 +1,180 @@
+
+tech_phaser_1 = {
+
+    area = physics
+    category = { particles }
+    tier = 0
+    start_tech = yes
+}
+
+tech_phaser_2 = {
+
+    cost = @tier1cost1
+    area = physics
+    category = { particles }
+    tier = 1
+    start_tech = no
+    prerequisites = { tech_phaser_1 }
+    weight = @tier1weight1
+}
+
+tech_phaser_3 = {
+
+    cost = @tier2cost1
+    area = physics
+    category = { particles }
+    tier = 2
+    start_tech = no
+    prerequisites = { tech_phaser_2 }
+    weight = @tier2weight1
+}
+
+tech_phaser_4 = {
+
+    cost = @tier3cost1
+    area = physics
+    category = { particles }
+    tier = 3
+    start_tech = no
+    prerequisites = { tech_phaser_3 }
+    weight = @tier3weight1
+}
+
+tech_phaser_5 = {
+
+    cost = @tier4cost1
+    area = physics
+    category = { particles }
+    tier = 4
+    start_tech = no
+    prerequisites = { tech_phaser_4 }
+    weight = @tier4weight1
+}
+
+
+tech_phaser_big_1 = {
+
+    cost = @tier2cost3
+    area = physics
+    category = { particles }
+    tier = 2
+    start_tech = no
+    weight = @tier2weight3
+}
+
+tech_phaser_big_2 = {
+
+    cost = @tier4cost3
+    area = physics
+    category = { particles }
+    tier = 4
+    start_tech = no
+    prerequisites = { tech_phaser_big_1 }
+    weight = @tier4weight3
+}
+
+tech_phaser_autocannon_1 = {
+
+    cost = @tier1cost1
+    area = physics
+    category = { particles }
+    tier = 1
+    start_tech = no
+    weight = @tier1weight1
+}
+
+tech_phaser_autocannon_2 = {
+
+    cost = @tier2cost1
+    area = physics
+    category = { particles }
+    tier = 2
+    start_tech = no
+    prerequisites = { tech_phaser_autocannon_1 }
+    weight = @tier2weight1
+}
+
+tech_phaser_autocannon_3 = {
+
+    cost = @tier3cost1
+    area = physics
+    category = { particles }
+    tier = 3
+    start_tech = no
+    prerequisites = { tech_phaser_autocannon_2 }
+    weight = @tier3weight1
+}
+
+tech_phaser_autocannon_4 = {
+
+    cost = @tier4cost1
+    area = physics
+    category = { particles }
+    tier = 4
+    start_tech = no
+    prerequisites = { tech_phaser_autocannon_3 }
+    weight = @tier4weight1
+}
+
+tech_phaser_autocannon_5 = {
+
+    cost = @tier5cost2
+    area = physics
+    category = { particles }
+    tier = 5
+    start_tech = no
+    prerequisites = { tech_phaser_autocannon_4 }
+    weight = @tier5weight2
+}
+
+tech_phaser_burstfire_1 = {
+
+    area = physics
+    category = { particles }
+    tier = 0
+    start_tech = yes
+}
+
+tech_phaser_burstfire_2 = {
+
+    cost = @tier2cost2
+    area = physics
+    category = { particles }
+    tier = 2
+    start_tech = no
+    prerequisites = { tech_phaser_burstfire_1 }
+    weight = @tier2weight2
+}
+
+tech_phaser_burstfire_3 = {
+
+    cost = @tier3cost2
+    area = physics
+    category = { particles }
+    tier = 3
+    start_tech = no
+    prerequisites = { tech_phaser_burstfire_2 }
+    weight = @tier3weight2
+}
+
+tech_phaser_burstfire_4 = {
+
+    cost = @tier4cost1
+    area = physics
+    category = { particles }
+    tier = 4
+    start_tech = no
+    prerequisites = { tech_phaser_burstfire_3 }
+    weight = @tier4weight1
+}
+
+tech_phaser_burstfire_5 = {
+
+    cost = @tier5cost1
+    area = physics
+    category = { particles }
+    tier = 5
+    start_tech = no
+    prerequisites = { tech_phaser_burstfire_4 }
+    weight = @tier5weight1
+}

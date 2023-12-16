@@ -1,0 +1,94 @@
+########################
+#	 UNIQUE TECHS	 #
+# REQUIRE A MAPO CHECK #
+########################
+
+tech_artificial_singularities_1 = {
+
+	area = physics
+	category = { field_manipulation }
+	tier = 0
+	start_tech = yes
+	potential = {
+		is_romulan = yes
+	}
+}
+
+tech_artificial_singularities_2 = {
+
+	cost = @tier2cost1
+	area = physics
+	category = { field_manipulation }
+	tier = 2
+	start_tech = no
+	prerequisites = { tech_artificial_singularities_1 }
+	weight = @tier2weight1
+	potential = {
+		is_romulan = yes
+	}
+}
+
+tech_artificial_singularities_3 = {
+
+	cost = @tier4cost2
+	area = physics
+	category = { field_manipulation }
+	tier = 4
+	start_tech = no
+	prerequisites = { tech_artificial_singularities_2 }
+	weight = @tier4weight2
+	potential = {
+		is_romulan = yes
+	}
+}
+
+tech_klingon_shrine = {
+
+	area = society
+	category = { statecraft }
+	tier = 0
+	start_tech = yes
+	potential = {
+		is_klingon = yes
+	}
+}
+
+tech_holographic_rituals = {
+
+	cost = @tier1cost2
+	area = society
+	category = { statecraft }
+	tier = 1
+	start_tech = no
+	prerequisites = { tech_klingon_shrine }
+	weight = @tier1weight2
+	potential = {
+		is_klingon = yes
+	}
+}
+
+tech_transcendent_faith = {
+
+	cost = @tier3cost2
+	area = society
+	category = { statecraft }
+	tier = 3
+	start_tech = no
+	weight = @tier3weight2
+	potential = {
+		is_klingon = yes
+	}
+}
+
+tech_hyper_entertainment_forum = {
+
+	cost = @tier3cost3
+	area = society
+	category = { statecraft }
+	tier = 3
+	start_tech = no
+	weight = @tier3weight3
+	potential = {
+		is_ufop = yes
+	}
+}

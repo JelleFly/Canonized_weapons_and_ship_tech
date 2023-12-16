@@ -1,0 +1,397 @@
+
+tech_power_hub_1 = {
+
+    cost = @tier1cost2
+    area = physics
+    category = { field_manipulation }
+    tier = 1
+    start_tech = no
+    weight = @tier1weight2
+}
+
+tech_power_hub_2 = {
+
+    cost = @tier2cost2
+    area = physics
+    category = { field_manipulation }
+    tier = 2
+    start_tech = no
+    prerequisites = { tech_power_hub_1 }
+    weight = @tier2weight2
+}
+
+# tech_artificial_singularities_1 = {
+
+#     area = physics
+#     category = { field_manipulation }
+#     tier = 1
+#     start_tech = yes
+# }
+
+# tech_artificial_singularities_2 = {
+
+#     cost = @tier2cost1
+#     area = physics
+#     category = { field_manipulation }
+#     tier = 2
+#     start_tech = no
+#     prerequisites = { tech_artificial_singularities_1 }
+#     weight = @tier2weight1
+# }
+
+# tech_artificial_singularities_3 = {
+
+#     cost = @tier4cost2
+#     area = physics
+#     category = { field_manipulation }
+#     tier = 4
+#     start_tech = no
+#     prerequisites = { tech_artificial_singularities_2 }
+#     weight = @tier4weight2
+# }
+
+tech_planetary_shield_generator = {
+
+    cost = @tier3cost2
+    area = physics
+    category = { field_manipulation }
+    tier = 3
+    start_tech = no
+    weight = @tier3weight2
+}
+
+tech_starbase_support_systems = {
+
+    area = physics
+    category = { computing }
+    tier = 0
+    start_tech = yes
+}
+
+tech_singularity_observatory = {
+
+    cost = @tier3cost3
+    area = physics
+    category = { field_manipulation }
+    tier = 3
+    start_tech = no
+    weight = @tier3weight3
+}
+
+# tech_wormhole_travel_unique = {
+
+#     cost = @tier3cost3
+#     area = physics
+#     category = { field_manipulation }
+#     tier = 3
+#     start_tech = no
+#     weight = @tier3weight3
+# }
+
+tech_all_research_speed_1 = {
+
+    cost = @tier1cost1
+    area = physics
+    category = { computing }
+    tier = 1
+    start_tech = no
+    weight = @tier1weight1   
+    modifier = {
+        all_technology_research_speed = 0.05 
+    }
+}
+
+tech_all_research_speed_2 = {
+
+    cost = @tier2cost1
+    area = physics
+    category = { computing }
+    tier = 2
+    start_tech = no
+    prerequisites = { tech_all_research_speed_1 }
+    weight = @tier2weight1   
+    modifier = {
+        all_technology_research_speed = 0.1 
+    }
+}
+
+tech_all_research_speed_3 = {
+
+    cost = @tier3cost1
+    area = physics
+    category = { computing }
+    tier = 3
+    start_tech = no
+    prerequisites = { tech_all_research_speed_2 }
+    weight = @tier3weight1   
+    modifier = {
+        all_technology_research_speed = 0.05 
+    }
+}
+
+# tech_research_station_output_tier_1 = {
+
+#     cost = @tier1cost1
+#     area = physics
+#     category = { computing }
+#     tier = 1
+#     start_tech = no
+#     weight = @tier1weight1   
+#     modifier = {
+#         station_researchers_produces_mult = 0.1 
+#     }
+# }
+
+# tech_research_station_output_tier_2 = {
+
+#     cost = @tier2cost2
+#     area = physics
+#     category = { computing }
+#     tier = 2
+#     start_tech = no
+#     prerequisites = { tech_research_station_output_tier_1 }
+#     weight = @tier2weight2   
+#     modifier = {
+#         station_researchers_produces_mult = 0.1 
+#     }
+# }
+
+# tech_research_station_output_tier_3 = {
+
+#     cost = @tier3cost3
+#     area = physics
+#     category = { computing }
+#     tier = 3
+#     start_tech = no
+#     prerequisites = { tech_research_station_output_tier_2 }
+#     weight = @tier3weight3   
+#     modifier = {
+#         station_researchers_produces_mult = 0.1 
+#     }
+# }
+
+tech_increase_survey_speed_unique = {
+
+    cost = @tier1cost1
+    area = physics
+    category = { computing }
+    tier = 1
+    start_tech = no
+    weight = @tier1weight1   
+    modifier = {
+        science_ship_survey_speed = 0.33 
+    }
+}
+
+# tech_enable_automatic_surveying = {
+
+#     area = physics
+#     category = { computing }
+#     tier = 1
+#     start_tech = yes
+# }
+
+# tech_mining_station_energy_output_increase_tier_1 = {
+
+#     cost = @tier1cost1
+#     area = physics
+#     category = { field_manipulation }
+#     tier = 1
+#     start_tech = no
+#     weight = @tier1weight1   
+#     modifier = {
+#         starbase_constructions_energy_produces_mult = 0.10
+#     }
+# }
+
+# tech_mining_station_energy_output_increase_tier_2 = {
+
+#     cost = @tier2cost3
+#     area = physics
+#     category = { field_manipulation }
+#     tier = 2
+#     start_tech = no
+#     prerequisites = { tech_mining_station_energy_output_increase_tier_1 }
+#     weight = @tier2weight3   
+#     modifier = {
+#         starbase_constructions_energy_produces_mult = 0.10
+#     }
+# }
+
+# tech_mining_station_energy_output_increase_tier_3 = {
+
+#     cost = @tier4cost1
+#     area = physics
+#     category = { field_manipulation }
+#     tier = 4
+#     start_tech = no
+#     prerequisites = { tech_mining_station_energy_output_increase_tier_2 }
+#     weight = @tier4weight1   
+#     modifier = {
+#         starbase_constructions_energy_produces_mult = 0.10
+#     }
+# }
+
+tech_warp_range_increase_tier_1 = {
+
+    cost = @tier3cost1
+    area = physics
+    category = { field_manipulation }
+    tier = 3
+    start_tech = no
+    weight = @tier3weight1   
+    modifier = {
+        warp_range_add = 0.1 
+    }
+}
+
+tech_warp_range_increase_tier_2 = {
+
+    cost = @tier4cost2
+    area = physics
+    category = { field_manipulation }
+    tier = 4
+    start_tech = no
+    prerequisites = { tech_warp_range_increase_tier_1 }
+    weight = @tier4weight2   
+    modifier = {
+        warp_range_add = 0.1 
+    }
+}
+
+tech_warp_range_increase_tier_3 = {
+
+    cost = @tier5cost3
+    area = physics
+    category = { field_manipulation }
+    tier = 5
+    start_tech = no
+    prerequisites = { tech_warp_range_increase_tier_2 }
+    weight = @tier5weight3   
+    modifier = {
+        warp_range_add = 0.1 
+    }
+}
+
+tech_warp_speed_increase_tier_1 = {
+
+    cost = @tier3cost1
+    area = physics
+    category = { field_manipulation }
+    tier = 3
+    start_tech = no
+    weight = @tier3weight1   
+    modifier = {
+        ship_warp_cooldown_mult = -0.2 
+    }
+}
+
+tech_warp_speed_increase_tier_2 = {
+
+    cost = @tier4cost2
+    area = physics
+    category = { field_manipulation }
+    tier = 4
+    start_tech = no
+    prerequisites = { tech_warp_speed_increase_tier_1 }
+    weight = @tier4weight2   
+    modifier = {
+        ship_warp_cooldown_mult = -0.2 
+    }
+}
+
+tech_warp_speed_increase_tier_3 = {
+
+    cost = @tier5cost3
+    area = physics
+    category = { field_manipulation }
+    tier = 5
+    start_tech = no
+    prerequisites = { tech_warp_speed_increase_tier_2 }
+    weight = @tier5weight3   
+    modifier = {
+        ship_warp_cooldown_mult = -0.2 
+    }
+}
+
+tech_mine_gravitons_1 = {
+
+    cost = @tier3cost2
+    area = physics
+    category = { field_manipulation }
+    tier = 3
+    start_tech = no
+    weight = @tier3weight2   
+    modifier = {
+        stations_gravitons_produces_mult = 0.25 
+    }
+}
+
+tech_mine_gravitons_2 = {
+
+    cost = @tier4cost2
+    area = physics
+    category = { field_manipulation }
+    tier = 4
+    start_tech = no
+    prerequisites = { tech_mine_gravitons_1 }
+    weight = @tier4weight2   
+    modifier = {
+        stations_gravitons_produces_mult = 0.3 
+    }
+}
+
+tech_mine_gravitons_3 = {
+
+    cost = @tier5cost2
+    area = physics
+    category = { field_manipulation }
+    tier = 5
+    start_tech = no
+    prerequisites = { tech_mine_gravitons_2 }
+    weight = @tier5weight2   
+    modifier = {
+        stations_gravitons_produces_mult = 0.45 
+    }
+}
+
+tech_mine_nanites_1 = {
+
+    cost = @tier3cost2
+    area = physics
+    category = { field_manipulation }
+    tier = 3
+    start_tech = no
+    weight = @tier3weight2   
+    modifier = {
+        stations_nanites_produces_mult = 0.25 
+    }
+}
+
+tech_mine_nanites_2 = {
+
+    cost = @tier4cost2
+    area = physics
+    category = { field_manipulation }
+    tier = 4
+    start_tech = no
+    prerequisites = { tech_mine_nanites_1 }
+    weight = @tier4weight2   
+    modifier = {
+        stations_nanites_produces_mult = 0.3 
+    }
+}
+
+tech_mine_nanites_3 = {
+
+    cost = @tier5cost2
+    area = physics
+    category = { field_manipulation }
+    tier = 5
+    start_tech = no
+    prerequisites = { tech_mine_nanites_2 }
+    weight = @tier5weight2   
+    modifier = {
+        stations_nanites_produces_mult = 0.45 
+    }
+}

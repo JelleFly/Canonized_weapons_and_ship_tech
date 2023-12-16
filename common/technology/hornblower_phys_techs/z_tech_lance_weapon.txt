@@ -1,0 +1,20 @@
+tech_lance_1 = {
+
+    cost = @tier3cost3
+    area = physics
+    category = { particles }
+    tier = 3
+    start_tech = no
+    weight = @tier3weight3
+}
+
+tech_lance_2 = {
+
+    cost = @tier4cost2
+    area = physics
+    category = { particles }
+    tier = 4
+    start_tech = no
+    prerequisites = { tech_lance_1 }
+    weight = @tier4weight2
+}

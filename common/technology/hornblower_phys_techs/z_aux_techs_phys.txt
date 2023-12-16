@@ -1,0 +1,51 @@
+
+tech_shield_booster = {
+
+    cost = @tier2cost1
+    area = physics
+    category = { field_manipulation }
+    tier = 2
+    start_tech = no
+    weight = @tier2weight1
+}
+
+tech_computer_assisted_targeting = {
+
+    cost = @tier1cost2
+    area = physics
+    category = { computing }
+    tier = 1
+    start_tech = no
+    weight = @tier1weight2
+}
+
+
+tech_basic_science_lab_1 = {
+
+    area = physics
+    category = { computing }
+    tier = 0
+    start_tech = yes
+}
+
+tech_basic_science_lab_2 = {
+
+    cost = @tier2cost3
+    area = physics
+    category = { computing }
+    tier = 2
+    start_tech = no
+    prerequisites = { tech_basic_science_lab_1 }
+    weight = @tier2weight3
+}
+
+tech_basic_science_lab_3 = {
+
+    cost = @tier4cost1
+    area = physics
+    category = { computing }
+    tier = 4
+    start_tech = no
+    prerequisites = { tech_basic_science_lab_2 }
+    weight = @tier4weight1
+}
